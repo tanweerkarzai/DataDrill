@@ -1,0 +1,54 @@
+{
+	"name": "DS_copymultiles2sql",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "_copymultiles2sql",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"sorcefile1": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().sorcefile1",
+					"type": "Expression"
+				},
+				"folderPath": "ForeachMultiplefilesCopyActivity",
+				"fileSystem": "mycontainer1"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "OrderDate",
+				"type": "String"
+			},
+			{
+				"name": "ProductKey",
+				"type": "String"
+			},
+			{
+				"name": "EnglishProductName",
+				"type": "String"
+			},
+			{
+				"name": "SalesAmount",
+				"type": "String"
+			},
+			{
+				"name": "TaxAmt",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

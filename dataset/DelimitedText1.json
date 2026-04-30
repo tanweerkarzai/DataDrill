@@ -1,0 +1,114 @@
+{
+	"name": "DelimitedText1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "*",
+				"folderPath": "Input",
+				"fileSystem": "mycontainer1"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "YUYUDJDJD0",
+				"type": "String"
+			},
+			{
+				"name": "YUYUDJDJD1",
+				"type": "String"
+			},
+			{
+				"name": "YUYUDJDJD2",
+				"type": "String"
+			},
+			{
+				"name": "YUYUDJDJD3",
+				"type": "String"
+			},
+			{
+				"name": "YUYUDJDJD4",
+				"type": "String"
+			},
+			{
+				"name": "YUYUDJDJD5",
+				"type": "String"
+			},
+			{
+				"name": "YUYUDJDJD6",
+				"type": "String"
+			},
+			{
+				"name": "YUYUDJDJD7",
+				"type": "String"
+			},
+			{
+				"name": "YUYUDJDJD8",
+				"type": "String"
+			},
+			{
+				"name": "YUYUDJDJD9",
+				"type": "String"
+			},
+			{
+				"name": "YUYUDJDJD10",
+				"type": "String"
+			},
+			{
+				"name": "YUYUDJDJD11",
+				"type": "String"
+			},
+			{
+				"name": "YUYUDJDJD12",
+				"type": "String"
+			},
+			{
+				"name": "YUYUDJDJD13",
+				"type": "String"
+			},
+			{
+				"name": "YUYUDJDJD14",
+				"type": "String"
+			},
+			{
+				"name": "YUYUDJDJD15",
+				"type": "String"
+			},
+			{
+				"name": "YUYUDJDJD16",
+				"type": "String"
+			},
+			{
+				"name": "YUYUDJDJD17",
+				"type": "String"
+			},
+			{
+				"name": "YUYUDJDJD18",
+				"type": "String"
+			},
+			{
+				"name": "YUYUDJDJD19",
+				"type": "String"
+			},
+			{
+				"name": "YUYUDJDJD20",
+				"type": "String"
+			},
+			{
+				"name": "YUYUDJDJD21",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

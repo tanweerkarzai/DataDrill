@@ -1,0 +1,30 @@
+{
+	"name": "variable activity",
+	"properties": {
+		"activities": [
+			{
+				"name": "Y",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Y",
+					"value": 1000
+				}
+			}
+		],
+		"variables": {
+			"Y": {
+				"type": "Integer",
+				"defaultValue": 500
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-04-14T05:50:27Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

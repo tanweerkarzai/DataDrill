@@ -1,0 +1,38 @@
+{
+	"name": "Execute_02_setVariablewithParameter",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Number",
+					"value": {
+						"value": "@pipeline().parameters.x",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"x": {
+				"type": "int",
+				"defaultValue": 100
+			}
+		},
+		"variables": {
+			"Number": {
+				"type": "Integer"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-04-19T10:57:29Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

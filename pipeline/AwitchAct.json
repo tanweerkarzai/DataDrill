@@ -1,0 +1,88 @@
+{
+	"name": "AwitchAct",
+	"properties": {
+		"activities": [
+			{
+				"name": "SwitchCond",
+				"type": "Switch",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"on": {
+						"value": "@variables('x')",
+						"type": "Expression"
+					},
+					"cases": [
+						{
+							"value": "2000",
+							"activities": [
+								{
+									"name": "Set2k",
+									"type": "SetVariable",
+									"dependsOn": [],
+									"policy": {
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"variableName": "Result",
+										"value": "2k"
+									}
+								}
+							]
+						},
+						{
+							"value": "1000",
+							"activities": [
+								{
+									"name": "Set1k",
+									"type": "SetVariable",
+									"dependsOn": [],
+									"policy": {
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"variableName": "Result",
+										"value": "1k"
+									}
+								}
+							]
+						}
+					],
+					"defaultActivities": [
+						{
+							"name": "Default",
+							"description": "",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Result",
+								"value": "N/A"
+							}
+						}
+					]
+				}
+			}
+		],
+		"variables": {
+			"x": {
+				"type": "String",
+				"defaultValue": "1000"
+			},
+			"Result": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-04-19T09:42:36Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

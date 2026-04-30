@@ -1,0 +1,35 @@
+{
+	"name": "South_DB_Tk",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_South_DB_TK",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "name",
+				"type": "varchar"
+			},
+			{
+				"name": "country",
+				"type": "varchar"
+			},
+			{
+				"name": "region",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "tk_employee"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
