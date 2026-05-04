@@ -1,0 +1,752 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "spytechadf"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage2'"
+		},
+		"AzureDataLakeStorage2_op_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage2_op'"
+		},
+		"AzureDataLakeStorage3_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage3'"
+		},
+		"AzureDataLakeStorage4_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage4'"
+		},
+		"AzureDataLakeStorage5_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage5'"
+		},
+		"AzureDataLakecolumnMappingAct_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakecolumnMappingAct'"
+		},
+		"AzureSqlDatabase1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase1'"
+		},
+		"AzureSqlDatabase2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase2'"
+		},
+		"Csv_File_To_convert in Json_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'Csv_File_To_convert in Json'"
+		},
+		"DL_copymultidata2sql_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'DL_copymultidata2sql'"
+		},
+		"DS_copymultifiles_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'DS_copymultifiles'"
+		},
+		"ForeachMultiplefilesCopyActivity_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ForeachMultiplefilesCopyActivity'"
+		},
+		"LS_ADL_Delete_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADL_Delete'"
+		},
+		"LS_AzureDB_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AzureDB'"
+		},
+		"LS_South_DB_TK_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_South_DB_TK'"
+		},
+		"LS_TrasferMultiFilesDLtoSQL_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_TrasferMultiFilesDLtoSQL'"
+		},
+		"LS_getfilenames_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_getfilenames'"
+		},
+		"LS_multiflesname_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_multiflesname'"
+		},
+		"Ls_FileAndFolderName_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'Ls_FileAndFolderName'"
+		},
+		"Ls_Json2SQL_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'Ls_Json2SQL'"
+		},
+		"Ls_SalesData_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'Ls_SalesData'"
+		},
+		"SqlServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer1'"
+		},
+		"SqlServer2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer2'"
+		},
+		"SqlServer3_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer3'"
+		},
+		"SqlServer4_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer4'"
+		},
+		"SqlServer5_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer5'"
+		},
+		"SqlServer5__password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer5_'"
+		},
+		"_copymultiles2sql_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of '_copymultiles2sql'"
+		},
+		"adls_ls_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'adls_ls'"
+		},
+		"adlstosql_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'adlstosql'"
+		},
+		"sOUTHdb_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'sOUTHdb'"
+		},
+		"timeframecopy_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'timeframecopy'"
+		},
+		"timeframecopyoutput_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'timeframecopyoutput'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_op_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage3_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage4_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage5_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"AzureDataLakecolumnMappingAct_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "spytechserver.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "spytechdb"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "spytechdb"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "spytechserver.database.windows.net"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "spytechdb"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "spytechdb"
+		},
+		"Csv_File_To_convert in Json_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"DL_copymultidata2sql_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"DS_copymultifiles_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"ForeachMultiplefilesCopyActivity_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"LS_ADL_Delete_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"LS_AzureDB_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "healthcare001.database.windows.net"
+		},
+		"LS_AzureDB_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "healthcaresouthdb"
+		},
+		"LS_AzureDB_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "healthcare"
+		},
+		"LS_South_DB_TK_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "healthcare001.database.windows.net"
+		},
+		"LS_South_DB_TK_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "healthcaresouthdb"
+		},
+		"LS_South_DB_TK_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "healthcare"
+		},
+		"LS_TrasferMultiFilesDLtoSQL_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"LS_getfilenames_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"LS_multiflesname_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"Ls_FileAndFolderName_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"Ls_Json2SQL_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"Ls_SalesData_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "spytechserver.database.windows.net"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "spytechdb"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "spytechdb"
+		},
+		"SqlServer2_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "spytechserver.database.windows.net"
+		},
+		"SqlServer2_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "spytechdb"
+		},
+		"SqlServer2_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "spytechdb"
+		},
+		"SqlServer3_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "spytechserver.database.windows.net"
+		},
+		"SqlServer3_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "spytechdb"
+		},
+		"SqlServer3_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "spytechdb"
+		},
+		"SqlServer4_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "spytechserver.database.windows.net"
+		},
+		"SqlServer4_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "spytechdb"
+		},
+		"SqlServer4_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "spytechdb"
+		},
+		"SqlServer5_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "spytechserver.database.windows.net"
+		},
+		"SqlServer5_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "spytechdb"
+		},
+		"SqlServer5_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "spytechdb"
+		},
+		"SqlServer5__properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "spytechserver.database.windows.net"
+		},
+		"SqlServer5__properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "spytechdb"
+		},
+		"SqlServer5__properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "spytechdb"
+		},
+		"_copymultiles2sql_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"adls_ls_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"adlstosql_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"sOUTHdb_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "healthcare001.database.windows.net"
+		},
+		"sOUTHdb_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "healthcarewestdb"
+		},
+		"sOUTHdb_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "healthcare"
+		},
+		"timeframecopy_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"timeframecopyoutput_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "spytechadf_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"AzureDataLakeStorage2_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
+					},
+					"AzureDataLakeStorage2_op_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage2_op_accountKey')]"
+					},
+					"AzureDataLakeStorage3_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage3_accountKey')]"
+					},
+					"AzureDataLakeStorage4_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage4_accountKey')]"
+					},
+					"AzureDataLakeStorage5_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage5_accountKey')]"
+					},
+					"AzureDataLakecolumnMappingAct_accountKey": {
+						"value": "[parameters('AzureDataLakecolumnMappingAct_accountKey')]"
+					},
+					"AzureSqlDatabase1_password": {
+						"value": "[parameters('AzureSqlDatabase1_password')]"
+					},
+					"AzureSqlDatabase2_password": {
+						"value": "[parameters('AzureSqlDatabase2_password')]"
+					},
+					"Csv_File_To_convert in Json_accountKey": {
+						"value": "[parameters('Csv_File_To_convert in Json_accountKey')]"
+					},
+					"DL_copymultidata2sql_accountKey": {
+						"value": "[parameters('DL_copymultidata2sql_accountKey')]"
+					},
+					"DS_copymultifiles_accountKey": {
+						"value": "[parameters('DS_copymultifiles_accountKey')]"
+					},
+					"ForeachMultiplefilesCopyActivity_accountKey": {
+						"value": "[parameters('ForeachMultiplefilesCopyActivity_accountKey')]"
+					},
+					"LS_ADL_Delete_accountKey": {
+						"value": "[parameters('LS_ADL_Delete_accountKey')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage2_op_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage2_op_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage3_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage3_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage4_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage4_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage5_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage5_properties_typeProperties_url')]"
+					},
+					"AzureDataLakecolumnMappingAct_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakecolumnMappingAct_properties_typeProperties_url')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_userName')]"
+					},
+					"AzureSqlDatabase2_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase2_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase2_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_userName')]"
+					},
+					"Csv_File_To_convert in Json_properties_typeProperties_url": {
+						"value": "[parameters('Csv_File_To_convert in Json_properties_typeProperties_url')]"
+					},
+					"DL_copymultidata2sql_properties_typeProperties_url": {
+						"value": "[parameters('DL_copymultidata2sql_properties_typeProperties_url')]"
+					},
+					"DS_copymultifiles_properties_typeProperties_url": {
+						"value": "[parameters('DS_copymultifiles_properties_typeProperties_url')]"
+					},
+					"ForeachMultiplefilesCopyActivity_properties_typeProperties_url": {
+						"value": "[parameters('ForeachMultiplefilesCopyActivity_properties_typeProperties_url')]"
+					},
+					"LS_ADL_Delete_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADL_Delete_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "spytechadf_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_AzureDB_password": {
+						"value": "[parameters('LS_AzureDB_password')]"
+					},
+					"LS_South_DB_TK_password": {
+						"value": "[parameters('LS_South_DB_TK_password')]"
+					},
+					"LS_TrasferMultiFilesDLtoSQL_accountKey": {
+						"value": "[parameters('LS_TrasferMultiFilesDLtoSQL_accountKey')]"
+					},
+					"LS_getfilenames_accountKey": {
+						"value": "[parameters('LS_getfilenames_accountKey')]"
+					},
+					"LS_multiflesname_accountKey": {
+						"value": "[parameters('LS_multiflesname_accountKey')]"
+					},
+					"Ls_FileAndFolderName_accountKey": {
+						"value": "[parameters('Ls_FileAndFolderName_accountKey')]"
+					},
+					"Ls_Json2SQL_accountKey": {
+						"value": "[parameters('Ls_Json2SQL_accountKey')]"
+					},
+					"Ls_SalesData_accountKey": {
+						"value": "[parameters('Ls_SalesData_accountKey')]"
+					},
+					"SqlServer1_password": {
+						"value": "[parameters('SqlServer1_password')]"
+					},
+					"SqlServer2_password": {
+						"value": "[parameters('SqlServer2_password')]"
+					},
+					"SqlServer3_password": {
+						"value": "[parameters('SqlServer3_password')]"
+					},
+					"SqlServer4_password": {
+						"value": "[parameters('SqlServer4_password')]"
+					},
+					"SqlServer5_password": {
+						"value": "[parameters('SqlServer5_password')]"
+					},
+					"SqlServer5__password": {
+						"value": "[parameters('SqlServer5__password')]"
+					},
+					"_copymultiles2sql_accountKey": {
+						"value": "[parameters('_copymultiles2sql_accountKey')]"
+					},
+					"adls_ls_accountKey": {
+						"value": "[parameters('adls_ls_accountKey')]"
+					},
+					"adlstosql_accountKey": {
+						"value": "[parameters('adlstosql_accountKey')]"
+					},
+					"sOUTHdb_password": {
+						"value": "[parameters('sOUTHdb_password')]"
+					},
+					"timeframecopy_accountKey": {
+						"value": "[parameters('timeframecopy_accountKey')]"
+					},
+					"timeframecopyoutput_accountKey": {
+						"value": "[parameters('timeframecopyoutput_accountKey')]"
+					},
+					"LS_AzureDB_properties_typeProperties_server": {
+						"value": "[parameters('LS_AzureDB_properties_typeProperties_server')]"
+					},
+					"LS_AzureDB_properties_typeProperties_database": {
+						"value": "[parameters('LS_AzureDB_properties_typeProperties_database')]"
+					},
+					"LS_AzureDB_properties_typeProperties_userName": {
+						"value": "[parameters('LS_AzureDB_properties_typeProperties_userName')]"
+					},
+					"LS_South_DB_TK_properties_typeProperties_server": {
+						"value": "[parameters('LS_South_DB_TK_properties_typeProperties_server')]"
+					},
+					"LS_South_DB_TK_properties_typeProperties_database": {
+						"value": "[parameters('LS_South_DB_TK_properties_typeProperties_database')]"
+					},
+					"LS_South_DB_TK_properties_typeProperties_userName": {
+						"value": "[parameters('LS_South_DB_TK_properties_typeProperties_userName')]"
+					},
+					"LS_TrasferMultiFilesDLtoSQL_properties_typeProperties_url": {
+						"value": "[parameters('LS_TrasferMultiFilesDLtoSQL_properties_typeProperties_url')]"
+					},
+					"LS_getfilenames_properties_typeProperties_url": {
+						"value": "[parameters('LS_getfilenames_properties_typeProperties_url')]"
+					},
+					"LS_multiflesname_properties_typeProperties_url": {
+						"value": "[parameters('LS_multiflesname_properties_typeProperties_url')]"
+					},
+					"Ls_FileAndFolderName_properties_typeProperties_url": {
+						"value": "[parameters('Ls_FileAndFolderName_properties_typeProperties_url')]"
+					},
+					"Ls_Json2SQL_properties_typeProperties_url": {
+						"value": "[parameters('Ls_Json2SQL_properties_typeProperties_url')]"
+					},
+					"Ls_SalesData_properties_typeProperties_url": {
+						"value": "[parameters('Ls_SalesData_properties_typeProperties_url')]"
+					},
+					"SqlServer1_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_server')]"
+					},
+					"SqlServer1_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_database')]"
+					},
+					"SqlServer1_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
+					},
+					"SqlServer2_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer2_properties_typeProperties_server')]"
+					},
+					"SqlServer2_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer2_properties_typeProperties_database')]"
+					},
+					"SqlServer2_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer2_properties_typeProperties_userName')]"
+					},
+					"SqlServer3_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer3_properties_typeProperties_server')]"
+					},
+					"SqlServer3_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer3_properties_typeProperties_database')]"
+					},
+					"SqlServer3_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer3_properties_typeProperties_userName')]"
+					},
+					"SqlServer4_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer4_properties_typeProperties_server')]"
+					},
+					"SqlServer4_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer4_properties_typeProperties_database')]"
+					},
+					"SqlServer4_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer4_properties_typeProperties_userName')]"
+					},
+					"SqlServer5_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer5_properties_typeProperties_server')]"
+					},
+					"SqlServer5_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer5_properties_typeProperties_database')]"
+					},
+					"SqlServer5_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer5_properties_typeProperties_userName')]"
+					},
+					"SqlServer5__properties_typeProperties_server": {
+						"value": "[parameters('SqlServer5__properties_typeProperties_server')]"
+					},
+					"SqlServer5__properties_typeProperties_database": {
+						"value": "[parameters('SqlServer5__properties_typeProperties_database')]"
+					},
+					"SqlServer5__properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer5__properties_typeProperties_userName')]"
+					},
+					"_copymultiles2sql_properties_typeProperties_url": {
+						"value": "[parameters('_copymultiles2sql_properties_typeProperties_url')]"
+					},
+					"adls_ls_properties_typeProperties_url": {
+						"value": "[parameters('adls_ls_properties_typeProperties_url')]"
+					},
+					"adlstosql_properties_typeProperties_url": {
+						"value": "[parameters('adlstosql_properties_typeProperties_url')]"
+					},
+					"sOUTHdb_properties_typeProperties_server": {
+						"value": "[parameters('sOUTHdb_properties_typeProperties_server')]"
+					},
+					"sOUTHdb_properties_typeProperties_database": {
+						"value": "[parameters('sOUTHdb_properties_typeProperties_database')]"
+					},
+					"sOUTHdb_properties_typeProperties_userName": {
+						"value": "[parameters('sOUTHdb_properties_typeProperties_userName')]"
+					},
+					"timeframecopy_properties_typeProperties_url": {
+						"value": "[parameters('timeframecopy_properties_typeProperties_url')]"
+					},
+					"timeframecopyoutput_properties_typeProperties_url": {
+						"value": "[parameters('timeframecopyoutput_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'spytechadf_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "spytechadf_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'spytechadf_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "spytechadf_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'spytechadf_ArmTemplate_2')]"
+			]
+		},
+		{
+			"name": "spytechadf_ArmTemplate_4",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_4.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'spytechadf_ArmTemplate_3')]"
+			]
+		}
+	]
+}

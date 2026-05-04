@@ -1,0 +1,279 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "spytechadf"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage2_op_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage3_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage4_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage5_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakecolumnMappingAct_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase2_password": {
+			"value": ""
+		},
+		"Csv_File_To_convert in Json_accountKey": {
+			"value": ""
+		},
+		"DL_copymultidata2sql_accountKey": {
+			"value": ""
+		},
+		"DS_copymultifiles_accountKey": {
+			"value": ""
+		},
+		"ForeachMultiplefilesCopyActivity_accountKey": {
+			"value": ""
+		},
+		"LS_ADL_Delete_accountKey": {
+			"value": ""
+		},
+		"LS_AzureDB_password": {
+			"value": ""
+		},
+		"LS_South_DB_TK_password": {
+			"value": ""
+		},
+		"LS_TrasferMultiFilesDLtoSQL_accountKey": {
+			"value": ""
+		},
+		"LS_getfilenames_accountKey": {
+			"value": ""
+		},
+		"LS_multiflesname_accountKey": {
+			"value": ""
+		},
+		"Ls_FileAndFolderName_accountKey": {
+			"value": ""
+		},
+		"Ls_Json2SQL_accountKey": {
+			"value": ""
+		},
+		"Ls_SalesData_accountKey": {
+			"value": ""
+		},
+		"SqlServer1_password": {
+			"value": ""
+		},
+		"SqlServer2_password": {
+			"value": ""
+		},
+		"SqlServer3_password": {
+			"value": ""
+		},
+		"SqlServer4_password": {
+			"value": ""
+		},
+		"SqlServer5_password": {
+			"value": ""
+		},
+		"SqlServer5__password": {
+			"value": ""
+		},
+		"_copymultiles2sql_accountKey": {
+			"value": ""
+		},
+		"adls_ls_accountKey": {
+			"value": ""
+		},
+		"adlstosql_accountKey": {
+			"value": ""
+		},
+		"sOUTHdb_password": {
+			"value": ""
+		},
+		"timeframecopy_accountKey": {
+			"value": ""
+		},
+		"timeframecopyoutput_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_op_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage3_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage4_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage5_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"AzureDataLakecolumnMappingAct_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "spytechserver.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "spytechdb"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "spytechdb"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_server": {
+			"value": "spytechserver.database.windows.net"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_database": {
+			"value": "spytechdb"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_userName": {
+			"value": "spytechdb"
+		},
+		"Csv_File_To_convert in Json_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"DL_copymultidata2sql_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"DS_copymultifiles_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"ForeachMultiplefilesCopyActivity_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"LS_ADL_Delete_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"LS_AzureDB_properties_typeProperties_server": {
+			"value": "healthcare001.database.windows.net"
+		},
+		"LS_AzureDB_properties_typeProperties_database": {
+			"value": "healthcaresouthdb"
+		},
+		"LS_AzureDB_properties_typeProperties_userName": {
+			"value": "healthcare"
+		},
+		"LS_South_DB_TK_properties_typeProperties_server": {
+			"value": "healthcare001.database.windows.net"
+		},
+		"LS_South_DB_TK_properties_typeProperties_database": {
+			"value": "healthcaresouthdb"
+		},
+		"LS_South_DB_TK_properties_typeProperties_userName": {
+			"value": "healthcare"
+		},
+		"LS_TrasferMultiFilesDLtoSQL_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"LS_getfilenames_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"LS_multiflesname_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"Ls_FileAndFolderName_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"Ls_Json2SQL_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"Ls_SalesData_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"value": "spytechserver.database.windows.net"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"value": "spytechdb"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"value": "spytechdb"
+		},
+		"SqlServer2_properties_typeProperties_server": {
+			"value": "spytechserver.database.windows.net"
+		},
+		"SqlServer2_properties_typeProperties_database": {
+			"value": "spytechdb"
+		},
+		"SqlServer2_properties_typeProperties_userName": {
+			"value": "spytechdb"
+		},
+		"SqlServer3_properties_typeProperties_server": {
+			"value": "spytechserver.database.windows.net"
+		},
+		"SqlServer3_properties_typeProperties_database": {
+			"value": "spytechdb"
+		},
+		"SqlServer3_properties_typeProperties_userName": {
+			"value": "spytechdb"
+		},
+		"SqlServer4_properties_typeProperties_server": {
+			"value": "spytechserver.database.windows.net"
+		},
+		"SqlServer4_properties_typeProperties_database": {
+			"value": "spytechdb"
+		},
+		"SqlServer4_properties_typeProperties_userName": {
+			"value": "spytechdb"
+		},
+		"SqlServer5_properties_typeProperties_server": {
+			"value": "spytechserver.database.windows.net"
+		},
+		"SqlServer5_properties_typeProperties_database": {
+			"value": "spytechdb"
+		},
+		"SqlServer5_properties_typeProperties_userName": {
+			"value": "spytechdb"
+		},
+		"SqlServer5__properties_typeProperties_server": {
+			"value": "spytechserver.database.windows.net"
+		},
+		"SqlServer5__properties_typeProperties_database": {
+			"value": "spytechdb"
+		},
+		"SqlServer5__properties_typeProperties_userName": {
+			"value": "spytechdb"
+		},
+		"_copymultiles2sql_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"adls_ls_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"adlstosql_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"sOUTHdb_properties_typeProperties_server": {
+			"value": "healthcare001.database.windows.net"
+		},
+		"sOUTHdb_properties_typeProperties_database": {
+			"value": "healthcarewestdb"
+		},
+		"sOUTHdb_properties_typeProperties_userName": {
+			"value": "healthcare"
+		},
+		"timeframecopy_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		},
+		"timeframecopyoutput_properties_typeProperties_url": {
+			"value": "https://spytechsa.dfs.core.windows.net/"
+		}
+	}
+}
