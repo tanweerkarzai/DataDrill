@@ -2,7 +2,7 @@
 	"name": "adls_ds",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "adls_ls",
+			"referenceName": "AzureDataLakeStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
@@ -15,11 +15,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": {
-					"value": "@dataset().sfname",
-					"type": "Expression"
-				},
-				"folderPath": "Input",
+				"fileName": "OrdersNew.csv",
 				"fileSystem": "mycontainer1"
 			},
 			"columnDelimiter": ",",
