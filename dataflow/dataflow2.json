@@ -42,8 +42,6 @@
 				"          OrderDate,",
 				"          ProductKey,",
 				"          Country,",
-				"          EnglishProductName,",
-				"          SalesAmount,",
 				"          TaxAmt",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
