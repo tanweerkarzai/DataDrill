@@ -1,11 +1,6 @@
 {
 	"name": "spytechadf",
 	"properties": {
-		"globalParameters": {
-			"pqr": {
-				"type": "object"
-			}
-		},
 		"trustModeClaimForMi": {
 			"value": "Enabled",
 			"editable": true
